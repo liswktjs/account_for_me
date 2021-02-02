@@ -11,13 +11,19 @@
     
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
+
+    <script>
+        function toAccount() {
+            location.href="account.html";
+        }
+    </script>
 </head>
 <body>
     <div class="body__container">
 
         <header>
             <div class="my_info">
-                <button class="my_info_btn">
+                <button class="my_info_btn btn" onclick="location.href='myinfo.html'">
                     My_Info
                 </button>
             </div>
@@ -25,16 +31,18 @@
 
         <section class="object_container">
             <div class="monthly_object">
-                <div class="monthly_title">
-                    1월
+                <div class="monthly_title" id="monthly_title" value="monthly_title">
+                    <script>
+                        let m = new Date();
+                        let month = m.getMonth() + 1;
+                        document.write(month + "월");
+                    </script>
                 </div>
-                <div class="monthly_info">
-                    <div class="monthly_total">
-                        450000원 
-                    </div>
-                    <div class="monthly_balance">
-                        50000원 
-                    </div>
+                <div class="monthly_total">
+                    450000원 
+                </div>
+                <div class="monthly_balance">
+                    50000원 
                 </div>
                 
             </div>
@@ -54,7 +62,7 @@
         </section>
 
         <section class="account">
-            <button class="input_account">
+            <button class="input_account btn" onclick="toAccount()">
                 사용 내역 
             </button>
         </section>
@@ -62,7 +70,10 @@
         <section class="goal">
 
             <div class="goal_img">
-                <img src="" />
+                <img src="../img/mac.jpeg"/>
+            </div>
+            <div class="goal_title">
+                맥북 
             </div>
             <div class="goal_price">
                 124만원 
@@ -73,7 +84,7 @@
         </section>
 
         <section class="lotto">
-            <button class="lotto_sat">
+            <button class="lotto_sat btn" onclick="location.href='lotto.html'">
                 나에게도 토요일의 행운이?
             </button>
         </section>

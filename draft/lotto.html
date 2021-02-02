@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="liswkjts">
+    <meta name="description" content="lotto page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/lotto.css">
+    <style>
+        @keyframes lotto_anmi {
+            50% { transform: rotate(-45deg);}
+            100% { transform: rotate(45deg);}
+        }
+    </style>
+    <script>
+
+        function getLotto() {
+            //버튼 클릭시 발생할 애니메이션 
+            var lotto = document.getElementById("lotto");
+            lotto.style.animationName = "lotto_anmi";
+            lotto.style.animationDuration = "3s";
+            for(var i = 0; i <6; i++){
+                addList();
+            }      
+        }
+        //자식 노드로 생성된 로또 번호 리스트를 각각 넣기 위해 함수를 쪼갬 
+        function addList(){
+            var inner_list = document.getElementById("inner_list");
+            var element = document.createElement('li');
+            inner_list.appendChild(element);
+            var list = document.createTextNode(madeList());
+            element.appendChild(list);
+        }
+        //1~45사이의 숫자들을 중복되는 숫자 없도록 리스트를 만든다 
+        function madeList() {
+            var lotto_list = [];
+
+                while (lotto_list.length < 6) {
+                    var ranNum = Math.floor(Math.random() * (46 - 1)) + 1;
+                    if(lotto_list.indexOf(ranNum) != -1) {
+                        continue;
+                    }
+                    else{
+                        lotto_list.push(ranNum);
+                    }
+                
+                }
+
+            lotto_list.sort(function(a, b){ return a-b; });
+            console.log(lotto_list);
+            
+            return lotto_list;
+        }
+    </script>
+</head>
+<body>
+    <div class="body__container">
+
+        <header>
+            <div class="home">
+                <img src="../img/home.png" onclick="location.href='main.html'">
+            </div>
+        </header>
+
+        <section class="main_event">
+            <div class="lotto_event" onclick="getLotto()">
+                <img src="../img/lotto.png" value="lotto" id="lotto">
+            </div>
+        </section>
+
+        <section class="event_result">
+            <div class="lotto_list" id="lotto_list">
+                <ul class="inner_list" id="inner_list">
+                    <li>로또 번호</li>
+                </ul>   
+            </div>
+        </section>
+    </div>
+</body>
+</html>
