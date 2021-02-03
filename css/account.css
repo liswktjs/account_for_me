@@ -1,0 +1,100 @@
+.body__container {
+    height: 846px;
+    width: 412px;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-family: 'Song Myung', serif;
+    background-color: #fbf6f0;
+}
+
+header {
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.home  {
+    margin: 10px;
+    grid-column: 1 / 2;
+    background: url(/img/home.png);
+}
+
+.home:hover{
+    background: url(/img/home_hover.png);
+}
+
+.month{
+    grid-column: 2 / 5;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+}
+
+.plus {
+    grid-column: 5 / 6;
+    background-image: url(../img/plus2.png);
+    margin: 5px;
+}
+.plus:hover{
+    margin: 5px;
+    background: url(/img/plus_hover.png);
+}
+
+.grid_content{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+.content{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.table{
+    border: 1px solid #aee6e6;
+
+    width:100%;
+    height: 80%;
+}
+
+.table td{
+    border-right: 1px solid #aee6e6;
+    border-bottom: 1px solid #aee6e6;
+    font-size: 25px;
+    padding: 8px;
+}
+
+.date{
+    width: 15%;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+}
+
+.last_account {
+    border: 1px solid #ffa45b;
+    background-color: #ffa45b;
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    padding-top: 15px;
+}
+/*버튼을 눌렀을 때 눌린것처럼 표시하기 위해서 그림자 추가 */
+.last_account:hover{
+    box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.075);
+}
+
+.static{
+    border: 1px solid #ffda77;
+    background-color: #ffda77;
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.static:hover{
+    box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.075);
+}
