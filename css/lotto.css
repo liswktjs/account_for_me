@@ -9,18 +9,14 @@
 
 .home  {
     margin: 10px;
-    background: url(../img/home.png);
 }
 
-.home:hover{
-    background: url(../img/home_hover.png);
-}
-/*
+
 .home img{
     size: 45px;
     margin: 15px;
 }
-*/
+
 
 .lotto_event img{
     width: 330px;
@@ -43,6 +39,12 @@
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+}
+
+.lotto_list p {
+    text-align: center;
+    margin: 20px;
+    font-size: 25px;
 }
 
 .inner_list li{

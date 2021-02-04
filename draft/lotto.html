@@ -17,12 +17,41 @@
         }
     </style>
     <script>
+        var term = 0; 
+        //addEventListener를 통해서 버튼 클릭시 발생할 이벤트를 등록한다 
+        window.onload = function() {
+            var lotto_event = document.getElementById("lotto_event");
+            lotto_event.addEventListener("click",madeOn, false);
+
+        }
+
+        function madeOn() {
+            term ++; 
+            console.log(term);
+            //첫번째로 클릭 시 로또 번호가 나오도록 한다 
+            if(term % 2 != 0){
+                getLotto();
+            }
+            //다시 클릭했을 때에 기존의 로또 번호를 지운다 
+            else{
+                clearLotto();
+            }
+        }
+
+        //childNode형식을로 붙인 lotto_list를 지운다 
+        function clearLotto(){
+            var inner_list = document.getElementById("inner_list");
+            while (inner_list.firstChild) {
+                inner_list.removeChild(inner_list.firstChild);
+            }
+        }
 
         function getLotto() {
             //버튼 클릭시 발생할 애니메이션 
             var lotto = document.getElementById("lotto");
             lotto.style.animationName = "lotto_anmi";
             lotto.style.animationDuration = "3s";
+
             for(var i = 0; i <6; i++){
                 addList();
             }      
@@ -62,20 +91,21 @@
 
         <header>
             <div class="home" onclick="location.href='main.html'">
-                <!--<img src="../img/home.png" > -->
+                <img src="../img/home.png" > 
             </div>
         </header>
 
         <section class="main_event">
-            <div class="lotto_event" onclick="getLotto()">
+            <div class="lotto_event" id="lotto_event">
                 <img src="../img/lotto.png" value="lotto" id="lotto">
             </div>
         </section>
 
         <section class="event_result">
             <div class="lotto_list" id="lotto_list">
+                <p>로또 번호</p>
                 <ul class="inner_list" id="inner_list">
-                    <li>로또 번호</li>
+                    
                 </ul>   
             </div>
         </section>
