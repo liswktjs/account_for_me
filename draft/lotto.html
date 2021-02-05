@@ -22,40 +22,35 @@
         window.onload = function() {
             var lotto_event = document.getElementById("lotto_event");
             lotto_event.addEventListener("click",madeOn, false);
-
+            lotto_event.addEventListener("click",setAnmi);
+            
         }
-
+        function setAnmi(){
+            //버튼 클릭시 발생할 애니메이션 
+            var lotto = document.getElementById("lotto");
+            lotto.style.animationName = "lotto_anmi";
+            lotto.style.animationDuration = "3s";
+        }
         function madeOn() {
             term ++; 
             console.log(term);
             //첫번째로 클릭 시 로또 번호가 나오도록 한다 
             if(term % 2 != 0){
-                getLotto();
+                
+
+                for(var i = 0; i <6; i++){
+                    addList();
+                }      
             }
             //다시 클릭했을 때에 기존의 로또 번호를 지운다 
             else{
-                clearLotto();
+                var inner_list = document.getElementById("inner_list");
+                while (inner_list.firstChild) {
+                    inner_list.removeChild(inner_list.firstChild);
+                }
             }
         }
 
-        //childNode형식을로 붙인 lotto_list를 지운다 
-        function clearLotto(){
-            var inner_list = document.getElementById("inner_list");
-            while (inner_list.firstChild) {
-                inner_list.removeChild(inner_list.firstChild);
-            }
-        }
-
-        function getLotto() {
-            //버튼 클릭시 발생할 애니메이션 
-            var lotto = document.getElementById("lotto");
-            lotto.style.animationName = "lotto_anmi";
-            lotto.style.animationDuration = "3s";
-
-            for(var i = 0; i <6; i++){
-                addList();
-            }      
-        }
         //자식 노드로 생성된 로또 번호 리스트를 각각 넣기 위해 함수를 쪼갬 
         function addList(){
             var inner_list = document.getElementById("inner_list");
@@ -76,7 +71,6 @@
                     else{
                         lotto_list.push(ranNum);
                     }
-                
                 }
 
             lotto_list.sort(function(a, b){ return a-b; });

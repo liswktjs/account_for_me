@@ -1,0 +1,58 @@
+.body__container {
+    height: 846px;
+    width: 412px;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-family: 'Song Myung', serif;
+    background-color: #fbf6f0;
+}
+
+.back {
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    background: url(/img/back.png);
+}
+
+.back:hover {
+    background: url(/img/back2.png);
+}
+
+.content{
+    border: 2.5px solid #ffa45b;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+    margin: 30px;
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.write_on {
+    grid-column: 2 / 6;
+    grid-row: 5 / 6;
+    border: 2px solid #ffa45b;
+    background-color: #ffa45b;
+    border-radius: 5px;
+    font-size: 50px;
+    text-align: center;
+    padding: 5px;
+    color: white;
+}
+.write_on:hover{
+    box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.075);
+}
+.write{
+    grid-column: 2 / 6;
+    grid-row: 2 / 5;
+}
+.inoutcome {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+.date {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
