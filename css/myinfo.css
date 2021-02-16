@@ -6,3 +6,41 @@
     font-family: 'Song Myung', serif;
     background-color: #fbf6f0;
 }
+
+.back {
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    background: url(/img/back.png);
+}
+
+.back:hover {
+    background: url(/img/back2.png);
+}
+
+.profile_container{
+    border: 2.5px solid #ffa45b;
+    border-radius: 50%;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    margin: 50px;
+    text-align: center;
+}
+
+.profile_pic img{
+    justify-content: center;
+    margin-top: 40px;
+}
+
+
+.info_container {
+    border: 2.5px solid #ffda77;
+    border-radius: 10px;
+}
+
+.modify_btn{
+    border: solid #aee6e6;
+    background-color: #aee6e6;
+    text-align: center;
+}
