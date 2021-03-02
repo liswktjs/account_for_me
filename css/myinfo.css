@@ -7,6 +7,10 @@
     background-color: #fbf6f0;
 }
 
+.modify_btn:hover{
+    box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.075);
+}
+
 .back {
     margin: 10px;
     width: 45px;
@@ -37,10 +41,12 @@
 .info_container {
     border: 2.5px solid #ffda77;
     border-radius: 10px;
+    height: 40%;
 }
 
 .modify_btn{
     border: solid #aee6e6;
     background-color: #aee6e6;
     text-align: center;
+    border-radius: 10px;
 }
