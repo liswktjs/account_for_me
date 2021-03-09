@@ -6,3 +6,76 @@
     font-family: 'Song Myung', serif;
     background-color: #fbf6f0;
 }
+.body {
+    border: 4px solid #aee6e6;
+    border-radius: 50px;
+    width: 95%;
+    height: 98%;
+    margin: 5px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20, 1fr);
+}
+
+.home {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+
+.home:hover{
+    background: url(/img/home_hover.png);
+}
+
+.mon_will {
+    grid-column: 5 / 17 ;
+    grid-row: 3 / 9;
+}
+.will_circle {
+    border: 1px solid #ffa45b;
+    background-color: #ffa45b;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.mon_done {
+    border: 1px solid #ffda77;
+    background-color: #ffda77;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    grid-column: 5 / 17;
+    grid-row: 7 / 13 ;
+    
+}
+
+.mon_obj {
+    border: 1px solid #aee6e6;
+    background-color: #aee6e6;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    grid-column : 3 / 19;
+    grid-row: 14 / 20;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8,1fr);
+}
+
+.obj_mon {
+    grid-column: 2 / 4;
+    grid-row : 2 / 4;
+    font-size: 25px;
+}
+.obj_total {
+    grid-column: 2 / 6;
+    grid-row: 4 / 6;
+    font-size: 25px;
+}
+.mon_btn {
+    grid-column: 2 / 6;
+    grid-row :  7 / 8;
+
+}
+
